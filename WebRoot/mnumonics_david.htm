@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Mnumonic Pegs 0 to 99</title>
+<script type="text/javascript" src="js/mnumonics.js"></script>
+<script type="text/javascript" src="js/util/mathUtils.js"></script>
+<script type="text/javascript" src="js/util/arrayUtils.js"></script>
+<script type="text/javascript" src="js/util/cookieUtils.js"></script>
+<script type="text/javascript" src="data/data.xml"></script>
+<style>
+body, td {
+	font-family: Verdana, Helvetica, Arial;
+}
+body {
+	background-color: #EEE;
+}
+table.slide-table {
+	background-color: white;
+	width: 320px;
+	border:1px solid #CCC;
+	margin:0px;
+}
+table.slide-table td {
+	margin:0px;
+	padding:5px;
+	border:1px solid gray;
+	cursor: pointer;
+}
+.slide-number {
+	font-size: 25pt;
+	width: 100px;
+	height:100px;
+	text-align: center;
+	vertical-align: middle;
+}
+.slide-answer {
+	height:50px;
+}
+.slide-answerTrue {
+	color: green;
+	background-color: #CFC;
+}
+.slide-answerFalse {
+	color: red;
+	background-color: #FC8;
+}
+.modeSelectorWrapper {
+	/*
+	height:20px;
+	*/
+}
+.modeSelector, .modeSelectorOn {
+	width: 100px;
+	color:green;
+	float:left;
+	/*
+	padding: 3px 0px 0px 0px;
+	*/
+	border: 1px solid silver;
+	border-width: 1px 1px 0px 1px;
+	background-color: white;
+	margin-right: 2px;
+}
+.modeSelector, .modeSelectorOn {
+}
+#content-tableWrapper table {
+	background-color: white;
+	border: 1px solid #CCC;
+}
+.areaTablePegRight {
+	color: #999;
+}
+.areaTablePegWrong {
+	color: red;
+}
+.tiny {
+font-size: 9pt;
+}
+
+td {
+	voice-family: male;
+	richness: 80;
+	cue-before: url("frog_caneToad.mp3")
+}
+
+</style>
+</head>
+<body onload="doOnLoad();">
+<form>
+<table class="modeSelectorWrapper"><tr>
+	<td onclick="showMode('table');" class="modeSelectorOn">Table</td>
+	<td onclick="showMode('test');" class="modeSelector">Test</td>
+	<td onclick="showMode('hundreds');" class="modeSelector">Hundreds</td>
+</tr></table>
+<div id="content-tableWrapper">
+	<div id="areaTable"></div>
+</div>
+<div id="content-testWrapper" style="display:none;">
+	<div id="areaSlide"></div>
+	<div id="areaInfo"></div>
+	<input type="button" value="Reset right/wrong" onclick="slideManager.resetPegTestResults();"/>
+</div>
+<div id="content-hundredsWrapper" style="display:none;"><div id="areaHundreds"></div>
+</div>
+<textarea name="txaData" style="display:none;">
+
+0 sparkling dots / bubbles
+1 stick
+2 swan
+3 heart
+4 sailing-boat
+5 seahorse
+6 snail
+7 axe
+8 snowman
+9 balloon
+
+10 golf hole + flag
+11 skis
+12 egg
+13 bat (vampire)
+14 sword
+15 whale
+16 lolly
+17 thumb-tack
+18 skateboard
+19 banana
+
+20 dart board
+21 key
+22 shoes
+23 dragon
+24 clock
+25 quarter (coin)
+26 Swiss flag
+27 iron (clothes)
+28 moon
+29 icecream cone
+
+30 jellyfish
+31 black-belt
+32 boxes
+33 flower
+34 lightning
+35 camera
+36 pyramid
+37 scorpion
+38 crown
+39 teddy
+
+40 helicopter
+41 stingray
+42 book
+43 explosion
+44 saw
+45 doll house
+46 die
+47 carrot
+48 Eiffel tower
+49 chocolate (Toblerone)
+
+50 birthday-cake
+51 wheelchair
+52 deck of cards
+53 palm tree
+54 shark
+55 snakes
+56 pile of sticks XXXX
+57 anvil
+58 train
+59 t-rex
+
+60 speed sign
+61 kangaroo
+62 stinky poo
+63 mouse
+64 chessboard
+65 bike / t.p.roll
+66 reading glasses
+67 telescope
+68 owl
+69 yin-yang
+
+70 longboat
+71 horse
+72 ruler
+73 seagull
+74 dalek
+75 pacman
+76 toilet
+77 table
+78 scissors
+79 gold nugget
+
+80 tiki
+81 alien
+82 guitar
+83 butterfly
+84 spider
+85 coffee mug
+86 apple logo
+87 bikini
+88 swastika
+89 clown
+
+90 speech bubble
+91 lotus-flower
+92 periodic table
+93 goldfish
+94 skull &amp; x-bones
+95 tweetybird
+96 bow (ribbon)
+97 bee
+98 Lego minifigure
+99 Clippy
+
+
+
+</textarea>
+<!--
+100 target
+101 tie-fighter
+111 
+222 pile of shoes
+444 factory
+747 jumbo jet
+888 nazis marching -->
+</form>
+</body>
+</html>
