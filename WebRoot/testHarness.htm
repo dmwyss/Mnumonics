@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Test Harness: ScoreCalculator</title>
+<script type="text/javascript" src="js/scoreCalculator.js"></script>
+<script type="text/javascript">
+function doTest(tryToCheck, iEst){
+	var sOut = "got: " + tryToCheck.getRating() + " expected: " + iEst + " ";
+	sOut += " (" + ((tryToCheck.getRating() * 100) / iEst) + "%)";
+	sOut += tryToCheck + ""
+	sOut += "\n"
+	return sOut;
+}
+var aiEst = new Array();
+tries.add("1,10,10,20000");
+aiEst[aiEst.length] = 1000;
+
+tries.add("2,10,5,100000");
+aiEst[aiEst.length] = 300;
+
+var sOut = "Over 100 means algorythm is too generous.\n"
+for ( var iElem = 0; iElem < tries.data.length; iElem++) {
+	sOut += doTest(tries.data[iElem], aiEst[iElem]);
+}
+
+alert(sOut);
+</script>
+</head>
+<body style="background-image:url(img/bgJobSecurity.png)">
+
+</body>
+</html>
